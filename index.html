@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lyxs1k — Webdesign</title>
+    <meta name="description" content="Moderne Websites für kleine Unternehmen und Selbstständige.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b10;
+            color: #f5f7fa;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(8, 11, 16, 0.75);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #28d7e8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            font-size: 14px;
+            color: #aeb6c2;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .nav-button {
+            background: #28d7e8;
+            color: #061014;
+            padding: 11px 18px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 72px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: #28d7e8;
+            opacity: 0.08;
+            filter: blur(120px);
+            border-radius: 50%;
+            top: 10%;
+            right: -150px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-block;
+            border: 1px solid rgba(40,215,232,0.35);
+            background: rgba(40,215,232,0.08);
+            color: #28d7e8;
+            padding: 7px 13px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 88px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            margin-bottom: 28px;
+        }
+
+        h1 span {
+            color: #28d7e8;
+        }
+
+        .hero-text {
+            color: #aeb6c2;
+            font-size: 19px;
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 14px 22px;
+            border-radius: 11px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .button-primary {
+            background: #28d7e8;
+            color: #061014;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            border: 1px solid #303844;
+            color: white;
+        }
+
+        .button-secondary:hover {
+            background: #151a22;
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-label {
+            color: #28d7e8;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 44px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            color: #8e98a7;
+            max-width: 650px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: #0d1118;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: #11161e;
+            border: 1px solid #202733;
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #28d7e8;
+        }
+
+        .card-number {
+            color: #28d7e8;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 35px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #8e98a7;
+            font-size: 15px;
+        }
+
+        /* PROJECT */
+
+        .project {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            background: #11161e;
+            border: 1px solid #202733;
+            border-radius: 22px;
+            overflow: hidden;
+        }
+
+        .project-image {
+            min-height: 360px;
+            background:
+                linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.5)),
+                url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=85")
+                center / cover;
+        }
+
+        .project-info {
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-tag {
+            color: #28d7e8;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .project-info h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .project-info p {
+            color: #8e98a7;
+            margin-bottom: 25px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #9ba5b3;
+            margin-top: 18px;
+        }
+
+        .about-box {
+            background: #11161e;
+            border: 1px solid #202733;
+            border-radius: 20px;
+            padding: 35px;
+        }
+
+        .about-box strong {
+            display: block;
+            font-size: 40px;
+            color: #28d7e8;
+            margin-bottom: 5px;
+        }
+
+        .about-box span {
+            color: #8e98a7;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .about-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #202733;
+            color: #c4cad2;
+        }
+
+        .about-list li::before {
+            content: "✓";
+            color: #28d7e8;
+            margin-right: 10px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            background: #0d1118;
+        }
+
+        .contact .section-description {
+            margin: auto;
+        }
+
+        .contact-button {
+            display: inline-block;
+            margin-top: 30px;
+            background: #28d7e8;
+            color: #061014;
+            padding: 15px 28px;
+            border-radius: 11px;
+            font-weight: 800;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid #202733;
+            color: #687382;
+            font-size: 13px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-button {
+                display: none;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                min-height: 250px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">Lyxs<span>1k</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#projekte">Projekte</a></li>
+                <li><a href="#ueber-mich">Über mich</a></li>
+            </ul>
+
+            <a href="#kontakt" class="nav-button">Kontakt</a>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+
+                <div class="badge">
+                    ● Webdesign & digitale Lösungen
+                </div>
+
+                <h1>
+                    Moderne Websites<br>
+                    für <span>echte Unternehmen.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Ich entwickle moderne, schnelle und responsive Websites
+                    für kleine Unternehmen und Selbstständige.
+                </p>
+
+                <div class="buttons">
+                    <a href="#projekte" class="button button-primary">
+                        Projekte ansehen →
+                    </a>
+
+                    <a href="#kontakt" class="button button-secondary">
+                        Kontakt
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="leistungen">
+        <div class="container">
+
+            <div class="section-label">Was ich mache</div>
+
+            <h2 class="section-title">
+                Websites, die professionell<br>
+                aussehen und funktionieren.
+            </h2>
+
+            <p class="section-description">
+                Von der ersten Idee bis zur fertigen Website.
+                Ich konzentriere mich auf ein modernes Design,
+                einfache Bedienung und eine gute Darstellung auf
+                Smartphone, Tablet und PC.
+            </p>
+
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card-number">01</div>
+                    <h3>Webdesign</h3>
+                    <p>
+                        Moderne Webseiten mit einem individuellen
+                        Design passend zum Unternehmen.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-number">02</div>
+                    <h3>Responsive Design</h3>
+                    <p>
+                        Die Website funktioniert auf Smartphone,
+                        Tablet und Desktop.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-number">03</div>
+                    <h3>KI-Unterstützung</h3>
+                    <p>
+                        Moderne KI-Tools helfen dabei, Ideen,
+                        Texte und Entwicklung effizient umzusetzen.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PROJECT -->
+
+    <section id="projekte">
+        <div class="container">
+
+            <div class="section-label">Mein Projekt</div>
+
+            <h2 class="section-title">
+                Erstes Projekt
+            </h2>
+
+            <p class="section-description">
+                Eine Beispiel-Website für ein deutsches
+                Reinigungsunternehmen.
+            </p>
+
+
+            <div class="project">
+
+                <div class="project-image"></div>
+
+                <div class="project-info">
+
+                    <div class="project-tag">
+                        Demo Website
+                    </div>
+
+                    <h3>NordClean</h3>
+
+                    <p>
+                        Moderne Landingpage für ein
+                        Reinigungsunternehmen mit klarer Struktur,
+                        Call-to-Actions und responsive Design.
+                    </p>
+
+                    <a
+                        href="https://lyxs1k.github.io/"
+                        target="_blank"
+                        class="button button-primary"
+                        style="width: fit-content;"
+                    >
+                        Projekt ansehen →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="ueber-mich">
+        <div class="container">
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <div class="section-label">Über mich</div>
+
+                    <h2 class="section-title">
+                        Ich baue Websites,<br>
+                        die im Gedächtnis bleiben.
+                    </h2>
+
+                    <p>
+                        Ich beschäftige mich mit modernem Webdesign
+                        und entwickle Websites mit HTML, CSS und
+                        modernen KI-Tools.
+                    </p>
+
+                    <p>
+                        Mein Ziel ist es, kleinen Unternehmen dabei
+                        zu helfen, online professioneller aufzutreten.
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <strong>01</strong>
+
+                    <span>
+                        Aktuelles Portfolio-Projekt
+                    </span>
+
+                    <ul class="about-list">
+                        <li>Modernes Webdesign</li>
+                        <li>Responsive Layouts</li>
+                        <li>HTML & CSS</li>
+                        <li>KI-gestützte Entwicklung</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="kontakt">
+
+        <div class="container">
+
+            <div class="section-label">Kontakt</div>
+
+            <h2 class="section-title">
+                Du brauchst eine Website?
+            </h2>
+
+            <p class="section-description">
+                Schreib mir und erzähl mir kurz von deinem
+                Unternehmen und deinem Projekt.
+            </p>
+
+            <a
+                href="https://github.com/Lyxs1k"
+                target="_blank"
+                class="contact-button"
+            >
+                Mein GitHub →
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <span>© 2026 Lyxs1k</span>
+            <span>Webdesign & digitale Lösungen</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
