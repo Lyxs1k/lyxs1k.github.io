@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NordClean | Professionelle Gebäudereinigung</title>
-
-    <meta name="description"
-          content="NordClean – professionelle Gebäudereinigung für Unternehmen und Privatkunden.">
+    <title>NordClean — Professionelle Gebäudereinigung</title>
+    <meta name="description" content="Professionelle Reinigung für Büros, Unternehmen und Privathaushalte.">
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -23,8 +20,8 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            color: #17202a;
-            background: #fff;
+            color: #111820;
+            background: #f7f9fa;
             line-height: 1.6;
         }
 
@@ -33,669 +30,413 @@
             color: inherit;
         }
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
         .container {
-            width: min(1180px, 90%);
+            width: min(1120px, 90%);
             margin: auto;
         }
 
-
-        /* ================= HEADER ================= */
+        /* HEADER */
 
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-
-            background: rgba(255,255,255,0.88);
-            backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid rgba(0,0,0,0.06);
+            z-index: 100;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid #e6e9eb;
         }
 
         nav {
-            height: 78px;
-
+            height: 66px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .logo {
-            font-size: 26px;
-            font-weight: 900;
+            font-size: 25px;
+            font-weight: 800;
             letter-spacing: -1px;
         }
 
         .logo span {
-            color: #0794a3;
+            color: #12a9bd;
         }
 
         .nav-links {
             display: flex;
-            gap: 34px;
+            gap: 32px;
             list-style: none;
-
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
-        }
-
-        .nav-links a {
-            transition: .2s;
         }
 
         .nav-links a:hover {
-            color: #0794a3;
+            color: #0ba6ba;
         }
 
         .nav-button {
-            background: #078b99;
+            background: #1099ab;
             color: white;
-
-            padding: 12px 20px;
-
+            padding: 12px 19px;
             border-radius: 9px;
-
             font-weight: 700;
-
-            transition: .25s;
+            font-size: 14px;
         }
 
-        .nav-button:hover {
-            transform: translateY(-2px);
-            background: #067580;
-        }
-
-
-        /* ================= HERO ================= */
+        /* HERO */
 
         .hero {
-            min-height: 820px;
-
-            padding-top: 120px;
-
+            min-height: 730px;
+            padding-top: 66px;
             display: flex;
             align-items: center;
 
             background:
                 linear-gradient(
                     90deg,
-                    rgba(4,20,25,.92) 0%,
-                    rgba(4,20,25,.72) 42%,
-                    rgba(4,20,25,.15) 100%
+                    rgba(3, 25, 30, 0.96) 0%,
+                    rgba(3, 25, 30, 0.82) 48%,
+                    rgba(3, 25, 30, 0.38) 100%
                 ),
-                url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2000&q=85");
-
-            background-size: cover;
-            background-position: center;
+                url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2000&q=90")
+                center / cover;
         }
 
         .hero-content {
-            max-width: 720px;
+            max-width: 760px;
             color: white;
-
-            animation: fadeUp .9s ease;
         }
 
         .badge {
             display: inline-block;
-
             padding: 8px 14px;
-
+            border: 1px solid rgba(64, 215, 232, 0.5);
+            background: rgba(22, 188, 207, 0.12);
             border-radius: 50px;
-
-            background: rgba(255,255,255,.12);
-            border: 1px solid rgba(255,255,255,.25);
-
-            backdrop-filter: blur(10px);
-
-            color: #8ce7ee;
-
+            color: #5ce0ef;
             font-size: 13px;
             font-weight: 800;
-
-            margin-bottom: 22px;
+            margin-bottom: 24px;
         }
 
-        .hero h1 {
-            font-size: clamp(48px, 7vw, 82px);
-            line-height: 1;
+        h1 {
+            font-size: clamp(52px, 7vw, 82px);
+            line-height: 0.98;
             letter-spacing: -4px;
-
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
-        .hero h1 span {
-            color: #45d4df;
+        h1 span {
+            color: #35d1e3;
         }
 
-        .hero p {
-            max-width: 620px;
-
-            font-size: 19px;
-
-            color: rgba(255,255,255,.82);
-
+        .hero-text {
+            max-width: 680px;
+            font-size: 18px;
+            color: #e0e7e9;
             margin-bottom: 34px;
         }
 
         .buttons {
             display: flex;
-            gap: 14px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 15px 23px;
-
+            display: inline-block;
+            padding: 15px 21px;
             border-radius: 9px;
-
             font-weight: 800;
-
-            transition: .25s;
+            transition: 0.2s;
         }
 
         .button-primary {
-            background: #0794a3;
+            background: #11aabd;
             color: white;
         }
 
         .button-primary:hover {
-            transform: translateY(-3px);
-            background: #067c89;
+            transform: translateY(-2px);
+            background: #0d99ab;
         }
 
         .button-secondary {
+            border: 1px solid rgba(255,255,255,0.5);
             color: white;
-
-            border: 1px solid rgba(255,255,255,.35);
-
-            background: rgba(255,255,255,.08);
-
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.08);
         }
 
         .button-secondary:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* STATS */
+
+        .stats {
             background: white;
-            color: #17202a;
-        }
-
-
-        /* ================= TRUST ================= */
-
-        .trust {
-            padding: 25px 0;
-
-            background: #fff;
-
-            border-bottom: 1px solid #eee;
-        }
-
-        .trust-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .trust-item {
             text-align: center;
+            padding: 27px 5%;
+            border-bottom: 1px solid #e8ecee;
         }
 
-        .trust-item strong {
+        .stat strong {
             display: block;
-
             font-size: 25px;
-            font-weight: 900;
+            color: #111820;
         }
 
-        .trust-item span {
-            color: #78838a;
-            font-size: 14px;
+        .stat span {
+            font-size: 13px;
+            color: #7c858d;
         }
 
-
-        /* ================= SECTIONS ================= */
+        /* GENERAL */
 
         section {
-            padding: 110px 0;
+            padding: 100px 0;
         }
 
         .section-label {
-            display: block;
-
-            color: #078b99;
-
-            font-size: 13px;
-            font-weight: 900;
-
+            color: #0aa4b7;
             text-transform: uppercase;
-
-            letter-spacing: 1.5px;
-
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: 800;
             margin-bottom: 10px;
         }
 
         .section-title {
-            font-size: clamp(36px, 5vw, 52px);
-
-            line-height: 1.08;
-
+            font-size: 44px;
+            line-height: 1.1;
             letter-spacing: -2px;
-
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .section-description {
-            max-width: 620px;
-
-            color: #6d777d;
-
-            font-size: 17px;
+            color: #68737c;
+            max-width: 650px;
         }
 
-
-        /* ================= SERVICES ================= */
+        /* SERVICES */
 
         .services {
-            background: #f6f9fa;
+            background: #f5f8f9;
         }
 
-        .section-heading {
-            margin-bottom: 50px;
-        }
-
-        .service-grid {
+        .cards {
+            margin-top: 45px;
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
-            gap: 22px;
+            gap: 18px;
         }
 
-        .service-card {
-            position: relative;
-
+        .card {
             background: white;
-
-            border: 1px solid #e7ecee;
-
-            border-radius: 18px;
-
-            padding: 34px;
-
-            overflow: hidden;
-
-            transition: .3s;
+            border: 1px solid #e3e8ea;
+            border-radius: 16px;
+            padding: 28px;
+            transition: 0.25s;
         }
 
-        .service-card::after {
-            content: "";
-
-            position: absolute;
-
-            width: 100px;
-            height: 100px;
-
-            right: -35px;
-            bottom: -35px;
-
-            background: #e6f8fa;
-
-            border-radius: 50%;
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #27c4d5;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
         }
 
-        .service-card:hover {
-            transform: translateY(-7px);
-
-            box-shadow:
-                0 20px 50px rgba(0,0,0,.08);
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e7f9fb;
+            color: #0aa4b7;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-bottom: 22px;
         }
 
-        .icon {
-            width: 58px;
-            height: 58px;
-
-            display: grid;
-            place-items: center;
-
-            border-radius: 14px;
-
-            background: #e4f7f9;
-
-            color: #078b99;
-
-            font-size: 26px;
-
-            margin-bottom: 24px;
-        }
-
-        .service-card h3 {
-            font-size: 21px;
+        .card h3 {
+            font-size: 20px;
             margin-bottom: 10px;
         }
 
-        .service-card p {
-            color: #707b81;
-            font-size: 15px;
+        .card p {
+            color: #737d85;
+            font-size: 14px;
         }
 
-
-        /* ================= ABOUT ================= */
+        /* ABOUT */
 
         .about-grid {
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
-            gap: 80px;
-
+            gap: 55px;
             align-items: center;
         }
 
         .about-image {
-            min-height: 520px;
-
-            border-radius: 22px;
+            min-height: 390px;
+            border-radius: 18px;
 
             background:
                 linear-gradient(
-                    rgba(0,0,0,.05),
-                    rgba(0,0,0,.15)
+                    rgba(0,0,0,0.08),
+                    rgba(0,0,0,0.15)
                 ),
-                url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=85");
-
-            background-size: cover;
-            background-position: center;
-
-            box-shadow:
-                0 25px 60px rgba(0,0,0,.12);
+                url("https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=85")
+                center / cover;
         }
 
-        .check-list {
-            list-style: none;
-
-            margin-top: 30px;
+        .about-text p {
+            color: #68737c;
+            margin-top: 17px;
         }
 
-        .check-list li {
-            display: flex;
-            align-items: center;
-
-            margin-bottom: 17px;
-
-            font-weight: 700;
-        }
-
-        .check {
-            width: 28px;
-            height: 28px;
-
-            display: grid;
-            place-items: center;
-
-            margin-right: 12px;
-
-            border-radius: 50%;
-
-            background: #e4f7f9;
-
-            color: #078b99;
-
-            font-size: 14px;
-        }
-
-
-        /* ================= REVIEWS ================= */
+        /* REVIEWS */
 
         .reviews {
-            background: #f6f9fa;
+            background: #f5f8f9;
         }
 
         .review-grid {
+            margin-top: 45px;
             display: grid;
-
-            grid-template-columns: repeat(3,1fr);
-
-            gap: 22px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
         }
 
         .review {
             background: white;
-
-            border: 1px solid #e8edef;
-
+            border: 1px solid #e3e8ea;
             border-radius: 16px;
-
-            padding: 30px;
+            padding: 28px;
         }
 
         .stars {
-            color: #f2b01e;
-
-            font-size: 19px;
-
-            margin-bottom: 17px;
+            color: #f0b429;
+            margin-bottom: 15px;
         }
 
         .review p {
-            color: #5f6a70;
-
-            margin-bottom: 22px;
+            color: #68737c;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
 
         .review strong {
             font-size: 14px;
         }
 
-
-        /* ================= CTA ================= */
+        /* CTA */
 
         .cta {
-            position: relative;
-
-            overflow: hidden;
-
-            background: #078b99;
-
+            background: #071d21;
             color: white;
-
             text-align: center;
         }
 
-        .cta::before {
-            content: "";
-
-            position: absolute;
-
-            width: 400px;
-            height: 400px;
-
-            border-radius: 50%;
-
-            background: rgba(255,255,255,.08);
-
-            top: -200px;
-            left: -100px;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta h2 {
-            font-size: clamp(38px, 5vw, 58px);
-
-            line-height: 1.05;
-
-            letter-spacing: -2px;
-
-            margin-bottom: 18px;
-        }
-
-        .cta p {
-            max-width: 620px;
-
-            margin: 0 auto 30px;
-
-            color: rgba(255,255,255,.85);
-
-            font-size: 17px;
-        }
-
-        .cta .button {
-            background: white;
-            color: #078b99;
-        }
-
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            padding: 45px 0;
-
-            background: #11191d;
-
+        .cta .section-title {
             color: white;
         }
 
-        .footer-grid {
+        .cta .section-description {
+            margin: auto;
+            color: #b5c4c7;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #051216;
+            color: #718187;
+            padding: 28px 0;
+            font-size: 13px;
+        }
+
+        .footer-content {
             display: flex;
-
-            align-items: center;
             justify-content: space-between;
-
-            gap: 30px;
+            align-items: center;
+            gap: 20px;
         }
 
-        footer strong {
-            font-size: 20px;
+        .portfolio-link {
+            color: #35d1e3;
         }
 
-        footer p {
-            color: #aab5ba;
-            font-size: 14px;
-        }
+        /* MOBILE */
 
-
-        /* ================= ANIMATION ================= */
-
-        @keyframes fadeUp {
-
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-
-        /* ================= MOBILE ================= */
-
-        @media(max-width: 850px) {
+        @media (max-width: 800px) {
 
             .nav-links {
                 display: none;
             }
 
             .nav-button {
-                padding: 10px 14px;
-                font-size: 13px;
+                display: none;
             }
 
             .hero {
-                min-height: 720px;
+                min-height: 650px;
             }
 
-            .hero h1 {
+            h1 {
                 letter-spacing: -2px;
             }
 
-            .trust-grid {
-                grid-template-columns: repeat(2,1fr);
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
             }
 
-            .service-grid,
-            .review-grid,
-            .about-grid {
+            .cards,
+            .review-grid {
                 grid-template-columns: 1fr;
             }
 
             .about-grid {
-                gap: 40px;
+                grid-template-columns: 1fr;
             }
 
             .about-image {
-                min-height: 350px;
+                min-height: 280px;
+                order: 2;
             }
 
-            .footer-grid {
+            .section-title {
+                font-size: 36px;
+            }
+
+            .footer-content {
                 flex-direction: column;
-                align-items: flex-start;
             }
-
         }
-
     </style>
 </head>
 
-
 <body>
 
-
-<!-- ================= HEADER ================= -->
-
 <header>
-
     <div class="container">
-
         <nav>
 
-            <a href="#" class="logo">
+            <a href="../" class="logo">
                 Nord<span>Clean</span>
             </a>
 
             <ul class="nav-links">
-
-                <li>
-                    <a href="#leistungen">
-                        Leistungen
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#ueber-uns">
-                        Über uns
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#bewertungen">
-                        Bewertungen
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#kontakt">
-                        Kontakt
-                    </a>
-                </li>
-
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#ueber-uns">Über uns</a></li>
+                <li><a href="#bewertungen">Bewertungen</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
             </ul>
 
             <a href="#kontakt" class="nav-button">
@@ -703,443 +444,326 @@
             </a>
 
         </nav>
-
     </div>
-
 </header>
 
 
 <main>
 
+    <!-- HERO -->
 
-<!-- ================= HERO ================= -->
+    <section class="hero">
 
-<section class="hero">
+        <div class="container">
 
-    <div class="container">
+            <div class="hero-content">
 
-        <div class="hero-content">
+                <div class="badge">
+                    ✓ Professionelle Gebäudereinigung
+                </div>
 
-            <div class="badge">
-                ✓ Professionelle Gebäudereinigung
-            </div>
+                <h1>
+                    Sauberkeit, die man
+                    <span>sieht.</span>
+                </h1>
 
-            <h1>
-                Sauberkeit, die man
-                <span>sieht.</span>
-            </h1>
+                <p class="hero-text">
+                    Professionelle Reinigung für Büros, Unternehmen
+                    und Privathaushalte. Zuverlässig, gründlich und flexibel.
+                </p>
 
-            <p>
-                Professionelle Reinigung für Büros,
-                Unternehmen und Privathaushalte.
-                Zuverlässig, gründlich und flexibel.
-            </p>
+                <div class="buttons">
 
-            <div class="buttons">
+                    <a href="#kontakt" class="button button-primary">
+                        Kostenloses Angebot →
+                    </a>
 
-                <a href="#kontakt"
-                   class="button button-primary">
-                    Kostenloses Angebot →
-                </a>
+                    <a href="#leistungen" class="button button-secondary">
+                        Leistungen ansehen
+                    </a>
 
-                <a href="#leistungen"
-                   class="button button-secondary">
-                    Leistungen ansehen
-                </a>
+                </div>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= TRUST ================= -->
+    <!-- STATS -->
 
-<div class="trust">
+    <div class="stats">
 
-    <div class="container">
+        <div class="stat">
+            <strong>100%</strong>
+            <span>Zuverlässigkeit</span>
+        </div>
 
-        <div class="trust-grid">
+        <div class="stat">
+            <strong>24/7</strong>
+            <span>Flexible Termine</span>
+        </div>
 
-            <div class="trust-item">
-                <strong>100%</strong>
-                <span>Zuverlässigkeit</span>
-            </div>
+        <div class="stat">
+            <strong>5★</strong>
+            <span>Servicequalität</span>
+        </div>
 
-            <div class="trust-item">
-                <strong>24/7</strong>
-                <span>Flexible Termine</span>
-            </div>
-
-            <div class="trust-item">
-                <strong>5★</strong>
-                <span>Servicequalität</span>
-            </div>
-
-            <div class="trust-item">
-                <strong>10+</strong>
-                <span>Jahre Erfahrung</span>
-            </div>
-
+        <div class="stat">
+            <strong>10+</strong>
+            <span>Jahre Erfahrung</span>
         </div>
 
     </div>
 
-</div>
 
+    <!-- SERVICES -->
 
-<!-- ================= SERVICES ================= -->
+    <section class="services" id="leistungen">
 
-<section class="services" id="leistungen">
+        <div class="container">
 
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-label">
+            <div class="section-label">
                 Unsere Leistungen
-            </span>
+            </div>
 
             <h2 class="section-title">
-                Reinigung für jeden Bedarf.
+                Sauberkeit für jeden<br>
+                Bereich.
             </h2>
 
             <p class="section-description">
-                Von der regelmäßigen Büroreinigung bis zur
-                gründlichen Reinigung Ihrer privaten Räume.
+                Ob Büro, Gewerbe oder Privathaushalt —
+                wir kümmern uns zuverlässig um die Reinigung.
             </p>
 
-        </div>
 
+            <div class="cards">
 
-        <div class="service-grid">
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    🏢
+                <div class="card">
+                    <div class="card-icon">✦</div>
+                    <h3>Büroreinigung</h3>
+                    <p>
+                        Saubere und angenehme Arbeitsplätze
+                        für Mitarbeiter und Kunden.
+                    </p>
                 </div>
 
-                <h3>
-                    Büroreinigung
-                </h3>
-
-                <p>
-                    Saubere und angenehme Arbeitsplätze
-                    für Mitarbeiter und Kunden.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    🏠
+                <div class="card">
+                    <div class="card-icon">⌂</div>
+                    <h3>Privathaushalte</h3>
+                    <p>
+                        Gründliche Reinigung für ein
+                        sauberes und gepflegtes Zuhause.
+                    </p>
                 </div>
 
-                <h3>
-                    Privatreinigung
-                </h3>
-
-                <p>
-                    Gründliche Reinigung von Wohnungen,
-                    Häusern und privaten Räumen.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    ✨
+                <div class="card">
+                    <div class="card-icon">▣</div>
+                    <h3>Gebäudereinigung</h3>
+                    <p>
+                        Professionelle Reinigung für
+                        gewerbliche und öffentliche Gebäude.
+                    </p>
                 </div>
 
-                <h3>
-                    Grundreinigung
-                </h3>
-
-                <p>
-                    Intensive Reinigung für besonders
-                    anspruchsvolle Bereiche.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    🪟
+                <div class="card">
+                    <div class="card-icon">◆</div>
+                    <h3>Fensterreinigung</h3>
+                    <p>
+                        Saubere Fenster und Glasflächen
+                        für einen klaren Eindruck.
+                    </p>
                 </div>
 
-                <h3>
-                    Fensterreinigung
-                </h3>
-
-                <p>
-                    Saubere Fenster und ein gepflegtes
-                    Erscheinungsbild.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    🏬
+                <div class="card">
+                    <div class="card-icon">✓</div>
+                    <h3>Grundreinigung</h3>
+                    <p>
+                        Intensive Reinigung für Bereiche,
+                        die besondere Aufmerksamkeit benötigen.
+                    </p>
                 </div>
 
-                <h3>
-                    Gewerbereinigung
-                </h3>
-
-                <p>
-                    Zuverlässige Reinigung für Geschäfte,
-                    Praxen und Gewerbeobjekte.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="icon">
-                    🧽
+                <div class="card">
+                    <div class="card-icon">↻</div>
+                    <h3>Regelmäßige Reinigung</h3>
+                    <p>
+                        Flexible Reinigungsintervalle,
+                        passend zu Ihrem Bedarf.
+                    </p>
                 </div>
-
-                <h3>
-                    Sonderreinigung
-                </h3>
-
-                <p>
-                    Individuelle Reinigungslösungen
-                    nach Ihren Anforderungen.
-                </p>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= ABOUT ================= -->
+    <!-- ABOUT -->
 
-<section id="ueber-uns">
+    <section id="ueber-uns">
 
-    <div class="container">
+        <div class="container">
 
-        <div class="about-grid">
+            <div class="about-grid">
 
+                <div class="about-image"></div>
 
-            <div class="about-image">
-            </div>
+                <div>
 
+                    <div class="section-label">
+                        Über NordClean
+                    </div>
 
-            <div>
+                    <h2 class="section-title">
+                        Sauberkeit ist<br>
+                        unser Anspruch.
+                    </h2>
 
-                <span class="section-label">
-                    Über uns
-                </span>
+                    <p style="color:#68737c;">
+                        Wir stehen für zuverlässige, gründliche und
+                        flexible Reinigungsleistungen.
+                    </p>
 
-                <h2 class="section-title">
-                    Qualität, auf die Sie sich verlassen können.
-                </h2>
+                    <p style="color:#68737c; margin-top:15px;">
+                        Unser Ziel ist es, unseren Kunden eine saubere
+                        Umgebung zu bieten, auf die sie sich verlassen können.
+                    </p>
 
-                <p class="section-description">
-                    Wir stehen für gründliche Arbeit,
-                    transparente Kommunikation und
-                    zuverlässigen Service.
-                </p>
+                    <a
+                        href="#kontakt"
+                        class="button button-primary"
+                        style="margin-top:25px;"
+                    >
+                        Kontakt aufnehmen →
+                    </a>
 
-
-                <ul class="check-list">
-
-                    <li>
-                        <span class="check">✓</span>
-                        Professionelles Team
-                    </li>
-
-                    <li>
-                        <span class="check">✓</span>
-                        Flexible Termine
-                    </li>
-
-                    <li>
-                        <span class="check">✓</span>
-                        Transparente Preise
-                    </li>
-
-                    <li>
-                        <span class="check">✓</span>
-                        Zuverlässiger Service
-                    </li>
-
-                </ul>
+                </div>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= REVIEWS ================= -->
+    <!-- REVIEWS -->
 
-<section class="reviews" id="bewertungen">
+    <section class="reviews" id="bewertungen">
 
-    <div class="container">
+        <div class="container">
 
-        <div class="section-heading">
-
-            <span class="section-label">
-                Kundenbewertungen
-            </span>
+            <div class="section-label">
+                Kundenstimmen
+            </div>
 
             <h2 class="section-title">
                 Was unsere Kunden sagen.
             </h2>
 
-        </div>
+            <p class="section-description">
+                Beispiele für Kundenbewertungen.
+            </p>
 
 
-        <div class="review-grid">
+            <div class="review-grid">
 
+                <div class="review">
+                    <div class="stars">★★★★★</div>
 
-            <div class="review">
+                    <p>
+                        „Sehr zuverlässiger Service und
+                        ein wirklich sauberes Ergebnis.“
+                    </p>
 
-                <div class="stars">
-                    ★★★★★
+                    <strong>— Beispielkunde</strong>
                 </div>
 
-                <p>
-                    „Sehr zuverlässig und professionell.
-                    Die Reinigung war gründlich und schnell.“
-                </p>
+                <div class="review">
+                    <div class="stars">★★★★★</div>
 
-                <strong>
-                    — Markus K.
-                </strong>
+                    <p>
+                        „Die Kommunikation war unkompliziert
+                        und die Arbeit sehr gründlich.“
+                    </p>
 
-            </div>
-
-
-            <div class="review">
-
-                <div class="stars">
-                    ★★★★★
+                    <strong>— Beispielkunde</strong>
                 </div>
 
-                <p>
-                    „Wir sind sehr zufrieden mit dem Service
-                    und der unkomplizierten Kommunikation.“
-                </p>
+                <div class="review">
+                    <div class="stars">★★★★★</div>
 
-                <strong>
-                    — Anna M.
-                </strong>
+                    <p>
+                        „Flexible Termine und ein sehr
+                        professioneller Eindruck.“
+                    </p>
 
-            </div>
-
-
-            <div class="review">
-
-                <div class="stars">
-                    ★★★★★
+                    <strong>— Beispielkunde</strong>
                 </div>
 
-                <p>
-                    „Sehr freundliches Team und hervorragende
-                    Arbeit. Klare Empfehlung.“
-                </p>
-
-                <strong>
-                    — Daniel S.
-                </strong>
-
             </div>
-
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= CTA ================= -->
+    <!-- CTA -->
 
-<section class="cta" id="kontakt">
+    <section class="cta" id="kontakt">
+
+        <div class="container">
+
+            <div class="section-label">
+                Kontakt
+            </div>
+
+            <h2 class="section-title">
+                Interesse an einer<br>
+                professionellen Reinigung?
+            </h2>
+
+            <p class="section-description">
+                Kontaktieren Sie uns für ein unverbindliches Angebot.
+            </p>
+
+            <a
+                href="mailto:info@nordclean.de"
+                class="button button-primary"
+                style="margin-top:30px;"
+            >
+                Angebot anfragen →
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
 
     <div class="container">
 
-        <div class="cta-content">
+        <div class="footer-content">
 
-            <h2>
-                Bereit für mehr Sauberkeit?
-            </h2>
+            <span>
+                © 2026 NordClean
+            </span>
 
-            <p>
-                Kontaktieren Sie uns für ein unverbindliches
-                und kostenloses Angebot.
-            </p>
-
-            <a href="mailto:info@nordclean.de"
-               class="button">
-                Anfrage senden →
+            <a href="../" class="portfolio-link">
+                ← Zum Portfolio
             </a>
 
         </div>
 
     </div>
 
-</section>
-
-
-</main>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-            <div>
-
-                <strong>
-                    NordClean
-                </strong>
-
-                <p>
-                    Professionelle Gebäudereinigung
-                </p>
-
-            </div>
-
-            <p>
-                © 2026 NordClean. Alle Rechte vorbehalten.
-            </p>
-
-        </div>
-
-    </div>
-
 </footer>
-
 
 </body>
 </html>
