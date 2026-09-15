@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lyxs1k — Webdesign</title>
-    <meta name="description" content="Moderne Websites für kleine Unternehmen und Selbstständige.">
+    <title>NordClean — Professionelle Gebäudereinigung</title>
+    <meta name="description" content="Professionelle Reinigung für Büros, Unternehmen und Privathaushalte.">
 
     <style>
         * {
@@ -20,14 +20,14 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #080b10;
-            color: #f5f7fa;
+            color: #111820;
+            background: #f7f9fa;
             line-height: 1.6;
         }
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
         }
 
         .container {
@@ -43,26 +43,26 @@
             left: 0;
             width: 100%;
             z-index: 100;
-            background: rgba(8, 11, 16, 0.75);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid #e6e9eb;
         }
 
         nav {
-            height: 72px;
+            height: 66px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 25px;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            letter-spacing: -1px;
         }
 
         .logo span {
-            color: #28d7e8;
+            color: #12a9bd;
         }
 
         .nav-links {
@@ -70,18 +70,18 @@
             gap: 32px;
             list-style: none;
             font-size: 14px;
-            color: #aeb6c2;
+            font-weight: 700;
         }
 
         .nav-links a:hover {
-            color: white;
+            color: #0ba6ba;
         }
 
         .nav-button {
-            background: #28d7e8;
-            color: #061014;
-            padding: 11px 18px;
-            border-radius: 10px;
+            background: #1099ab;
+            color: white;
+            padding: 12px 19px;
+            border-radius: 9px;
             font-weight: 700;
             font-size: 14px;
         }
@@ -89,208 +89,188 @@
         /* HERO */
 
         .hero {
-            min-height: 100vh;
+            min-height: 730px;
+            padding-top: 66px;
             display: flex;
             align-items: center;
-            padding-top: 72px;
-            position: relative;
-            overflow: hidden;
-        }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: #28d7e8;
-            opacity: 0.08;
-            filter: blur(120px);
-            border-radius: 50%;
-            top: 10%;
-            right: -150px;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(3, 25, 30, 0.96) 0%,
+                    rgba(3, 25, 30, 0.82) 48%,
+                    rgba(3, 25, 30, 0.38) 100%
+                ),
+                url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2000&q=90")
+                center / cover;
         }
 
         .hero-content {
-            max-width: 800px;
-            position: relative;
-            z-index: 2;
+            max-width: 760px;
+            color: white;
         }
 
         .badge {
             display: inline-block;
-            border: 1px solid rgba(40,215,232,0.35);
-            background: rgba(40,215,232,0.08);
-            color: #28d7e8;
-            padding: 7px 13px;
+            padding: 8px 14px;
+            border: 1px solid rgba(64, 215, 232, 0.5);
+            background: rgba(22, 188, 207, 0.12);
             border-radius: 50px;
+            color: #5ce0ef;
             font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 25px;
+            font-weight: 800;
+            margin-bottom: 24px;
         }
 
         h1 {
-            font-size: clamp(48px, 8vw, 88px);
+            font-size: clamp(52px, 7vw, 82px);
             line-height: 0.98;
             letter-spacing: -4px;
             margin-bottom: 28px;
         }
 
         h1 span {
-            color: #28d7e8;
+            color: #35d1e3;
         }
 
         .hero-text {
-            color: #aeb6c2;
-            font-size: 19px;
-            max-width: 650px;
-            margin-bottom: 35px;
+            max-width: 680px;
+            font-size: 18px;
+            color: #e0e7e9;
+            margin-bottom: 34px;
         }
 
         .buttons {
             display: flex;
-            gap: 14px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .button {
-            padding: 14px 22px;
-            border-radius: 11px;
-            font-weight: 700;
+            display: inline-block;
+            padding: 15px 21px;
+            border-radius: 9px;
+            font-weight: 800;
             transition: 0.2s;
         }
 
         .button-primary {
-            background: #28d7e8;
-            color: #061014;
+            background: #11aabd;
+            color: white;
         }
 
         .button-primary:hover {
             transform: translateY(-2px);
+            background: #0d99ab;
         }
 
         .button-secondary {
-            border: 1px solid #303844;
+            border: 1px solid rgba(255,255,255,0.5);
             color: white;
+            background: rgba(255,255,255,0.08);
         }
 
         .button-secondary:hover {
-            background: #151a22;
+            background: rgba(255,255,255,0.15);
         }
 
-        /* SECTION */
+        /* STATS */
+
+        .stats {
+            background: white;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            padding: 27px 5%;
+            border-bottom: 1px solid #e8ecee;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 25px;
+            color: #111820;
+        }
+
+        .stat span {
+            font-size: 13px;
+            color: #7c858d;
+        }
+
+        /* GENERAL */
 
         section {
-            padding: 110px 0;
+            padding: 100px 0;
         }
 
         .section-label {
-            color: #28d7e8;
+            color: #0aa4b7;
             text-transform: uppercase;
+            letter-spacing: 2px;
             font-size: 12px;
             font-weight: 800;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .section-title {
             font-size: 44px;
             line-height: 1.1;
             letter-spacing: -2px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .section-description {
-            color: #8e98a7;
+            color: #68737c;
             max-width: 650px;
         }
 
         /* SERVICES */
 
         .services {
-            background: #0d1118;
+            background: #f5f8f9;
         }
 
         .cards {
+            margin-top: 45px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 18px;
-            margin-top: 50px;
         }
 
         .card {
-            background: #11161e;
-            border: 1px solid #202733;
-            border-radius: 18px;
-            padding: 30px;
+            background: white;
+            border: 1px solid #e3e8ea;
+            border-radius: 16px;
+            padding: 28px;
             transition: 0.25s;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            border-color: #28d7e8;
+            border-color: #27c4d5;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
         }
 
-        .card-number {
-            color: #28d7e8;
-            font-size: 13px;
-            font-weight: 800;
-            margin-bottom: 35px;
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e7f9fb;
+            color: #0aa4b7;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-bottom: 22px;
         }
 
         .card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
+            font-size: 20px;
+            margin-bottom: 10px;
         }
 
         .card p {
-            color: #8e98a7;
-            font-size: 15px;
-        }
-
-        /* PROJECT */
-
-        .project {
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            background: #11161e;
-            border: 1px solid #202733;
-            border-radius: 22px;
-            overflow: hidden;
-        }
-
-        .project-image {
-            min-height: 360px;
-            background:
-                linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.5)),
-                url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=85")
-                center / cover;
-        }
-
-        .project-info {
-            padding: 45px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .project-tag {
-            color: #28d7e8;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 15px;
-        }
-
-        .project-info h3 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .project-info p {
-            color: #8e98a7;
-            margin-bottom: 25px;
+            color: #737d85;
+            font-size: 14px;
         }
 
         /* ABOUT */
@@ -298,84 +278,98 @@
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 70px;
+            gap: 55px;
             align-items: center;
         }
 
+        .about-image {
+            min-height: 390px;
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.08),
+                    rgba(0,0,0,0.15)
+                ),
+                url("https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=85")
+                center / cover;
+        }
+
         .about-text p {
-            color: #9ba5b3;
-            margin-top: 18px;
+            color: #68737c;
+            margin-top: 17px;
         }
 
-        .about-box {
-            background: #11161e;
-            border: 1px solid #202733;
-            border-radius: 20px;
-            padding: 35px;
+        /* REVIEWS */
+
+        .reviews {
+            background: #f5f8f9;
         }
 
-        .about-box strong {
-            display: block;
-            font-size: 40px;
-            color: #28d7e8;
-            margin-bottom: 5px;
+        .review-grid {
+            margin-top: 45px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
         }
 
-        .about-box span {
-            color: #8e98a7;
+        .review {
+            background: white;
+            border: 1px solid #e3e8ea;
+            border-radius: 16px;
+            padding: 28px;
         }
 
-        .about-list {
-            list-style: none;
-            margin-top: 25px;
+        .stars {
+            color: #f0b429;
+            margin-bottom: 15px;
         }
 
-        .about-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #202733;
-            color: #c4cad2;
+        .review p {
+            color: #68737c;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
 
-        .about-list li::before {
-            content: "✓";
-            color: #28d7e8;
-            margin-right: 10px;
+        .review strong {
+            font-size: 14px;
         }
 
-        /* CONTACT */
+        /* CTA */
 
-        .contact {
+        .cta {
+            background: #071d21;
+            color: white;
             text-align: center;
-            background: #0d1118;
         }
 
-        .contact .section-description {
+        .cta .section-title {
+            color: white;
+        }
+
+        .cta .section-description {
             margin: auto;
-        }
-
-        .contact-button {
-            display: inline-block;
-            margin-top: 30px;
-            background: #28d7e8;
-            color: #061014;
-            padding: 15px 28px;
-            border-radius: 11px;
-            font-weight: 800;
+            color: #b5c4c7;
         }
 
         /* FOOTER */
 
         footer {
-            padding: 30px 0;
-            border-top: 1px solid #202733;
-            color: #687382;
+            background: #051216;
+            color: #718187;
+            padding: 28px 0;
             font-size: 13px;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             gap: 20px;
+        }
+
+        .portfolio-link {
+            color: #35d1e3;
         }
 
         /* MOBILE */
@@ -390,25 +384,31 @@
                 display: none;
             }
 
+            .hero {
+                min-height: 650px;
+            }
+
             h1 {
                 letter-spacing: -2px;
             }
 
-            .cards {
-                grid-template-columns: 1fr;
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
             }
 
-            .project {
+            .cards,
+            .review-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .project-image {
-                min-height: 250px;
             }
 
             .about-grid {
                 grid-template-columns: 1fr;
-                gap: 35px;
+            }
+
+            .about-image {
+                min-height: 280px;
+                order: 2;
             }
 
             .section-title {
@@ -427,15 +427,22 @@
 <header>
     <div class="container">
         <nav>
-            <a href="#" class="logo">Lyxs<span>1k</span></a>
+
+            <a href="https://lyxs1k.github.io/" class="logo">
+                Nord<span>Clean</span>
+            </a>
 
             <ul class="nav-links">
                 <li><a href="#leistungen">Leistungen</a></li>
-                <li><a href="#projekte">Projekte</a></li>
-                <li><a href="#ueber-mich">Über mich</a></li>
+                <li><a href="#ueber-uns">Über uns</a></li>
+                <li><a href="#bewertungen">Bewertungen</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
             </ul>
 
-            <a href="#kontakt" class="nav-button">Kontakt</a>
+            <a href="#kontakt" class="nav-button">
+                Angebot anfragen
+            </a>
+
         </nav>
     </div>
 </header>
@@ -446,135 +453,192 @@
     <!-- HERO -->
 
     <section class="hero">
+
         <div class="container">
+
             <div class="hero-content">
 
                 <div class="badge">
-                    ● Webdesign & digitale Lösungen
+                    ✓ Professionelle Gebäudereinigung
                 </div>
 
                 <h1>
-                    Moderne Websites<br>
-                    für <span>echte Unternehmen.</span>
+                    Sauberkeit, die man
+                    <span>sieht.</span>
                 </h1>
 
                 <p class="hero-text">
-                    Ich entwickle moderne, schnelle und responsive Websites
-                    für kleine Unternehmen und Selbstständige.
+                    Professionelle Reinigung für Büros, Unternehmen
+                    und Privathaushalte. Zuverlässig, gründlich und flexibel.
                 </p>
 
                 <div class="buttons">
-                    <a href="#projekte" class="button button-primary">
-                        Projekte ansehen →
+
+                    <a href="#kontakt" class="button button-primary">
+                        Kostenloses Angebot →
                     </a>
 
-                    <a href="#kontakt" class="button button-secondary">
-                        Kontakt
+                    <a href="#leistungen" class="button button-secondary">
+                        Leistungen ansehen
                     </a>
+
                 </div>
 
             </div>
+
         </div>
+
     </section>
+
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+        <div class="stat">
+            <strong>100%</strong>
+            <span>Zuverlässigkeit</span>
+        </div>
+
+        <div class="stat">
+            <strong>24/7</strong>
+            <span>Flexible Termine</span>
+        </div>
+
+        <div class="stat">
+            <strong>5★</strong>
+            <span>Servicequalität</span>
+        </div>
+
+        <div class="stat">
+            <strong>10+</strong>
+            <span>Jahre Erfahrung</span>
+        </div>
+
+    </div>
 
 
     <!-- SERVICES -->
 
     <section class="services" id="leistungen">
+
         <div class="container">
 
-            <div class="section-label">Was ich mache</div>
+            <div class="section-label">
+                Unsere Leistungen
+            </div>
 
             <h2 class="section-title">
-                Websites, die professionell<br>
-                aussehen und funktionieren.
+                Sauberkeit für jeden<br>
+                Bereich.
             </h2>
 
             <p class="section-description">
-                Von der ersten Idee bis zur fertigen Website.
-                Ich konzentriere mich auf ein modernes Design,
-                einfache Bedienung und eine gute Darstellung auf
-                Smartphone, Tablet und PC.
+                Ob Büro, Gewerbe oder Privathaushalt —
+                wir kümmern uns zuverlässig um die Reinigung.
             </p>
 
 
             <div class="cards">
 
                 <div class="card">
-                    <div class="card-number">01</div>
-                    <h3>Webdesign</h3>
+                    <div class="card-icon">✦</div>
+                    <h3>Büroreinigung</h3>
                     <p>
-                        Moderne Webseiten mit einem individuellen
-                        Design passend zum Unternehmen.
+                        Saubere und angenehme Arbeitsplätze
+                        für Mitarbeiter und Kunden.
                     </p>
                 </div>
 
                 <div class="card">
-                    <div class="card-number">02</div>
-                    <h3>Responsive Design</h3>
+                    <div class="card-icon">⌂</div>
+                    <h3>Privathaushalte</h3>
                     <p>
-                        Die Website funktioniert auf Smartphone,
-                        Tablet und Desktop.
+                        Gründliche Reinigung für ein
+                        sauberes und gepflegtes Zuhause.
                     </p>
                 </div>
 
                 <div class="card">
-                    <div class="card-number">03</div>
-                    <h3>KI-Unterstützung</h3>
+                    <div class="card-icon">▣</div>
+                    <h3>Gebäudereinigung</h3>
                     <p>
-                        Moderne KI-Tools helfen dabei, Ideen,
-                        Texte und Entwicklung effizient umzusetzen.
+                        Professionelle Reinigung für
+                        gewerbliche und öffentliche Gebäude.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">◆</div>
+                    <h3>Fensterreinigung</h3>
+                    <p>
+                        Saubere Fenster und Glasflächen
+                        für einen klaren Eindruck.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">✓</div>
+                    <h3>Grundreinigung</h3>
+                    <p>
+                        Intensive Reinigung für Bereiche,
+                        die besondere Aufmerksamkeit benötigen.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">↻</div>
+                    <h3>Regelmäßige Reinigung</h3>
+                    <p>
+                        Flexible Reinigungsintervalle,
+                        passend zu Ihrem Bedarf.
                     </p>
                 </div>
 
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- PROJECT -->
+    <!-- ABOUT -->
 
-    <section id="projekte">
+    <section id="ueber-uns">
+
         <div class="container">
 
-            <div class="section-label">Mein Projekt</div>
+            <div class="about-grid">
 
-            <h2 class="section-title">
-                Erstes Projekt
-            </h2>
+                <div class="about-image"></div>
 
-            <p class="section-description">
-                Eine Beispiel-Website für ein deutsches
-                Reinigungsunternehmen.
-            </p>
+                <div>
 
-
-            <div class="project">
-
-                <div class="project-image"></div>
-
-                <div class="project-info">
-
-                    <div class="project-tag">
-                        Demo Website
+                    <div class="section-label">
+                        Über NordClean
                     </div>
 
-                    <h3>NordClean</h3>
+                    <h2 class="section-title">
+                        Sauberkeit ist<br>
+                        unser Anspruch.
+                    </h2>
 
-                    <p>
-                        Moderne Landingpage für ein
-                        Reinigungsunternehmen mit klarer Struktur,
-                        Call-to-Actions und responsive Design.
+                    <p style="color:#68737c;">
+                        Wir stehen für zuverlässige, gründliche und
+                        flexible Reinigungsleistungen.
+                    </p>
+
+                    <p style="color:#68737c; margin-top:15px;">
+                        Unser Ziel ist es, unseren Kunden eine saubere
+                        Umgebung zu bieten, auf die sie sich verlassen können.
                     </p>
 
                     <a
-                        href="https://lyxs1k.github.io/"
-                        target="_blank"
+                        href="#kontakt"
                         class="button button-primary"
-                        style="width: fit-content;"
+                        style="margin-top:25px;"
                     >
-                        Projekt ansehen →
+                        Kontakt aufnehmen →
                     </a>
 
                 </div>
@@ -582,85 +646,96 @@
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- REVIEWS -->
 
-    <section id="ueber-mich">
+    <section class="reviews" id="bewertungen">
+
         <div class="container">
 
-            <div class="about-grid">
+            <div class="section-label">
+                Kundenstimmen
+            </div>
 
-                <div class="about-text">
+            <h2 class="section-title">
+                Was unsere Kunden sagen.
+            </h2>
 
-                    <div class="section-label">Über mich</div>
+            <p class="section-description">
+                Beispiele für Kundenbewertungen.
+            </p>
 
-                    <h2 class="section-title">
-                        Ich baue Websites,<br>
-                        die im Gedächtnis bleiben.
-                    </h2>
+
+            <div class="review-grid">
+
+                <div class="review">
+                    <div class="stars">★★★★★</div>
 
                     <p>
-                        Ich beschäftige mich mit modernem Webdesign
-                        und entwickle Websites mit HTML, CSS und
-                        modernen KI-Tools.
+                        „Sehr zuverlässiger Service und
+                        ein wirklich sauberes Ergebnis.“
                     </p>
 
-                    <p>
-                        Mein Ziel ist es, kleinen Unternehmen dabei
-                        zu helfen, online professioneller aufzutreten.
-                    </p>
-
+                    <strong>— Beispielkunde</strong>
                 </div>
 
+                <div class="review">
+                    <div class="stars">★★★★★</div>
 
-                <div class="about-box">
+                    <p>
+                        „Die Kommunikation war unkompliziert
+                        und die Arbeit sehr gründlich.“
+                    </p>
 
-                    <strong>01</strong>
+                    <strong>— Beispielkunde</strong>
+                </div>
 
-                    <span>
-                        Aktuelles Portfolio-Projekt
-                    </span>
+                <div class="review">
+                    <div class="stars">★★★★★</div>
 
-                    <ul class="about-list">
-                        <li>Modernes Webdesign</li>
-                        <li>Responsive Layouts</li>
-                        <li>HTML & CSS</li>
-                        <li>KI-gestützte Entwicklung</li>
-                    </ul>
+                    <p>
+                        „Flexible Termine und ein sehr
+                        professioneller Eindruck.“
+                    </p>
 
+                    <strong>— Beispielkunde</strong>
                 </div>
 
             </div>
 
         </div>
+
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- CTA -->
 
-    <section class="contact" id="kontakt">
+    <section class="cta" id="kontakt">
 
         <div class="container">
 
-            <div class="section-label">Kontakt</div>
+            <div class="section-label">
+                Kontakt
+            </div>
 
             <h2 class="section-title">
-                Du brauchst eine Website?
+                Interesse an einer<br>
+                professionellen Reinigung?
             </h2>
 
             <p class="section-description">
-                Schreib mir und erzähl mir kurz von deinem
-                Unternehmen und deinem Projekt.
+                Kontaktieren Sie uns für ein unverbindliches Angebot.
             </p>
 
             <a
-                href="https://github.com/Lyxs1k"
-                target="_blank"
-                class="contact-button"
+                href="mailto:info@nordclean.de"
+                class="button button-primary"
+                style="margin-top:30px;"
             >
-                Mein GitHub →
+                Angebot anfragen →
             </a>
 
         </div>
@@ -671,12 +746,23 @@
 
 
 <footer>
+
     <div class="container">
+
         <div class="footer-content">
-            <span>© 2026 Lyxs1k</span>
-            <span>Webdesign & digitale Lösungen</span>
+
+            <span>
+                © 2026 NordClean
+            </span>
+
+            <a href="https://lyxs1k.github.io/" class="portfolio-link">
+                ← Zum Portfolio
+            </a>
+
         </div>
+
     </div>
+
 </footer>
 
 </body>
