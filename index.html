@@ -1,792 +1,551 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Lyxs1k — Webdesign</title>
-    <meta name="description" content="Moderne Websites für kleine Unternehmen und Selbstständige.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #080b10;
-            color: #f5f7fa;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1120px, 90%);
-            margin: auto;
-        }
-
-        /* HEADER */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(8, 11, 16, 0.78);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        nav {
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: #28d7e8;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-            font-size: 14px;
-            color: #aeb6c2;
-        }
-
-        .nav-links a:hover {
-            color: white;
-        }
-
-        .nav-button {
-            background: #28d7e8;
-            color: #061014;
-            padding: 11px 18px;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 72px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 650px;
-            height: 650px;
-            background: #28d7e8;
-            opacity: 0.08;
-            filter: blur(130px);
-            border-radius: 50%;
-            top: 5%;
-            right: -180px;
-        }
-
-        .hero-content {
-            max-width: 850px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .badge {
-            display: inline-block;
-            border: 1px solid rgba(40,215,232,0.35);
-            background: rgba(40,215,232,0.08);
-            color: #28d7e8;
-            padding: 7px 13px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 25px;
-        }
-
-        h1 {
-            font-size: clamp(48px, 8vw, 88px);
-            line-height: 0.98;
-            letter-spacing: -4px;
-            margin-bottom: 28px;
-        }
-
-        h1 span {
-            color: #28d7e8;
-        }
-
-        .hero-text {
-            color: #aeb6c2;
-            font-size: 19px;
-            max-width: 680px;
-            margin-bottom: 35px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 14px 22px;
-            border-radius: 11px;
-            font-weight: 700;
-            transition: 0.2s;
-        }
-
-        .button-primary {
-            background: #28d7e8;
-            color: #061014;
-        }
-
-        .button-primary:hover {
-            transform: translateY(-2px);
-        }
-
-        .button-secondary {
-            border: 1px solid #303844;
-            color: white;
-        }
-
-        .button-secondary:hover {
-            background: #151a22;
-        }
-
-        /* GENERAL SECTIONS */
-
-        section {
-            padding: 110px 0;
-        }
-
-        .section-label {
-            color: #28d7e8;
-            text-transform: uppercase;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-size: 44px;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 18px;
-        }
-
-        .section-description {
-            color: #8e98a7;
-            max-width: 680px;
-        }
-
-        /* SERVICES */
-
-        .services {
-            background: #0d1118;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-top: 50px;
-        }
-
-        .card {
-            background: #11161e;
-            border: 1px solid #202733;
-            border-radius: 18px;
-            padding: 30px;
-            transition: 0.25s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #28d7e8;
-        }
-
-        .card-number {
-            color: #28d7e8;
-            font-size: 13px;
-            font-weight: 800;
-            margin-bottom: 35px;
-        }
-
-        .card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: #8e98a7;
-            font-size: 15px;
-        }
-
-        /* PROCESS */
-
-        .process {
-            margin-top: 55px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .process-item {
-            padding: 28px;
-            border-left: 2px solid #28d7e8;
-            background: #11161e;
-            border-radius: 0 15px 15px 0;
-        }
-
-        .process-item strong {
-            display: block;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .process-item p {
-            color: #8e98a7;
-            font-size: 14px;
-        }
-
-        /* PROJECT */
-
-        .project {
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            background: #11161e;
-            border: 1px solid #202733;
-            border-radius: 22px;
-            overflow: hidden;
-        }
-
-        .project-image {
-            min-height: 390px;
-            background:
-                linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.5)),
-                url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=85")
-                center / cover;
-        }
-
-        .project-info {
-            padding: 45px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .project-tag {
-            color: #28d7e8;
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 15px;
-        }
-
-        .project-info h3 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .project-info p {
-            color: #8e98a7;
-            margin-bottom: 25px;
-        }
-
-        /* ABOUT */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .about-text p {
-            color: #9ba5b3;
-            margin-top: 18px;
-        }
-
-        .about-box {
-            background: #11161e;
-            border: 1px solid #202733;
-            border-radius: 20px;
-            padding: 35px;
-        }
-
-        .about-box strong {
-            display: block;
-            font-size: 40px;
-            color: #28d7e8;
-            margin-bottom: 5px;
-        }
-
-        .about-box span {
-            color: #8e98a7;
-        }
-
-        .about-list {
-            list-style: none;
-            margin-top: 25px;
-        }
-
-        .about-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #202733;
-            color: #c4cad2;
-        }
-
-        .about-list li::before {
-            content: "✓";
-            color: #28d7e8;
-            margin-right: 10px;
-        }
-
-        /* CONTACT */
-
-        .contact {
-            text-align: center;
-            background: #0d1118;
-        }
-
-        .contact .section-description {
-            margin: auto;
-        }
-
-        .contact-buttons {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .contact-button {
-            display: inline-block;
-            background: #28d7e8;
-            color: #061014;
-            padding: 15px 28px;
-            border-radius: 11px;
-            font-weight: 800;
-        }
-
-        .github-button {
-            display: inline-block;
-            border: 1px solid #303844;
-            padding: 15px 28px;
-            border-radius: 11px;
-            font-weight: 800;
-        }
-
-        .github-button:hover {
-            background: #151a22;
-        }
-
-        /* FOOTER */
-
-        footer {
-            padding: 30px 0;
-            border-top: 1px solid #202733;
-            color: #687382;
-            font-size: 13px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-button {
-                display: none;
-            }
-
-            h1 {
-                letter-spacing: -2px;
-            }
-
-            .cards,
-            .process {
-                grid-template-columns: 1fr;
-            }
-
-            .project {
-                grid-template-columns: 1fr;
-            }
-
-            .project-image {
-                min-height: 250px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-            .section-title {
-                font-size: 36px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NOIR BARBER — Modern Barber Shop</title>
+
+  <meta
+    name="description"
+    content="NOIR BARBER – moderner Barbershop mit klassischen Cuts und modernem Style."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111111;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(17, 17, 17, 0.95);
+      border-bottom: 1px solid #2b2b2b;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .logo span {
+      color: #c9a45c;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 14px;
+      color: #bdbdbd;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-button {
+      padding: 12px 18px;
+      border: 1px solid #c9a45c;
+      color: #c9a45c;
+      font-weight: 700;
+      font-size: 13px;
+      transition: 0.2s;
+    }
+
+    .nav-button:hover {
+      background: #c9a45c;
+      color: #111111;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 30%, #292015 0, transparent 35%),
+        #111111;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: #c9a45c;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(54px, 8vw, 100px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -4px;
+      margin-bottom: 30px;
+    }
+
+    h1 span {
+      color: #c9a45c;
+    }
+
+    .hero-text {
+      max-width: 600px;
+      color: #a8a8a8;
+      font-size: 18px;
+      margin-bottom: 36px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 24px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .button-primary {
+      background: #c9a45c;
+      color: #111111;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      background: #dfbd78;
+    }
+
+    .button-secondary {
+      border: 1px solid #444444;
+      color: #ffffff;
+    }
+
+    .button-secondary:hover {
+      border-color: #c9a45c;
+      color: #c9a45c;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 100px 0;
+      border-top: 1px solid #242424;
+    }
+
+    .section-label {
+      color: #c9a45c;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1;
+      margin-bottom: 55px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      background: #181818;
+      border: 1px solid #292929;
+      padding: 32px;
+      transition: 0.2s;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+      border-color: #c9a45c;
+    }
+
+    .service-number {
+      color: #c9a45c;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 30px;
+    }
+
+    .service h3 {
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      color: #969696;
+      font-size: 14px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-text {
+      color: #a5a5a5;
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .about-box {
+      min-height: 330px;
+      background:
+        linear-gradient(135deg, #262016, #151515);
+      border: 1px solid #332b20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .about-box strong {
+      font-size: 70px;
+      letter-spacing: 8px;
+      color: #c9a45c;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      padding-bottom: 120px;
+    }
+
+    .contact h2 {
+      font-size: clamp(40px, 6vw, 72px);
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      color: #999999;
+      max-width: 550px;
+      margin: 0 auto 35px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #242424;
+      padding: 28px 0;
+      color: #777777;
+      font-size: 13px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 650px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-box {
+        min-height: 240px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="container">
-        <nav>
-            <a href="#" class="logo">Lyxs<span>1k</span></a>
+  <!-- HEADER -->
 
-            <ul class="nav-links">
-                <li><a href="#leistungen">Leistungen</a></li>
-                <li><a href="#ablauf">Ablauf</a></li>
-                <li><a href="#projekte">Projekte</a></li>
-                <li><a href="#ueber-mich">Über mich</a></li>
-            </ul>
+  <header>
+    <div class="container nav">
 
-            <a href="#kontakt" class="nav-button">Kontakt</a>
-        </nav>
+      <a href="#" class="logo">
+        NOIR<span>.</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">Über uns</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-button">
+        Termin buchen
+      </a>
+
     </div>
-</header>
+  </header>
 
 
-<main>
+  <!-- HERO -->
 
-    <!-- HERO -->
+  <main>
 
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
+      <div class="container">
 
-                <div class="badge">
-                    ● Webdesign & digitale Lösungen
-                </div>
+        <div class="hero-content">
 
-                <h1>
-                    Websites, die<br>
-                    <span>professionell wirken.</span>
-                </h1>
+          <div class="eyebrow">
+            Premium Barber Shop
+          </div>
 
-                <p class="hero-text">
-                    Ich entwickle moderne, schnelle und responsive Websites
-                    für kleine Unternehmen und Selbstständige – klar,
-                    professionell und auf den jeweiligen Betrieb zugeschnitten.
-                </p>
+          <h1>
+            Dein Style.<br>
+            <span>Dein Look.</span>
+          </h1>
 
-                <div class="buttons">
-                    <a href="#projekte" class="button button-primary">
-                        Projekte ansehen →
-                    </a>
+          <p class="hero-text">
+            Moderne Cuts, klassische Styles und präzise Arbeit.
+            Willkommen bei NOIR BARBER.
+          </p>
 
-                    <a href="#kontakt" class="button button-secondary">
-                        Projekt anfragen
-                    </a>
-                </div>
+          <div class="buttons">
 
-            </div>
+            <a href="#contact" class="button button-primary">
+              Termin buchen →
+            </a>
+
+            <a href="#services" class="button button-secondary">
+              Services ansehen
+            </a>
+
+          </div>
+
         </div>
+
+      </div>
     </section>
 
 
     <!-- SERVICES -->
 
-    <section class="services" id="leistungen">
-        <div class="container">
+    <section id="services">
 
-            <div class="section-label">Leistungen</div>
+      <div class="container">
 
-            <h2 class="section-title">
-                Alles, was eine moderne<br>
-                Website braucht.
-            </h2>
+        <div class="section-label">
+          Unsere Leistungen
+        </div>
 
-            <p class="section-description">
-                Von der ersten Idee bis zur fertigen Website.
-                Der Fokus liegt auf einem modernen Erscheinungsbild,
-                einfacher Bedienung und einer guten Darstellung auf
-                Smartphone, Tablet und PC.
+        <h2 class="section-title">
+          Was wir machen.
+        </h2>
+
+        <div class="services">
+
+          <article class="service">
+            <div class="service-number">01</div>
+
+            <h3>Classic Cut</h3>
+
+            <p>
+              Präziser Haarschnitt mit sauberem Finish
+              und persönlicher Beratung.
             </p>
+          </article>
 
-            <div class="cards">
 
-                <div class="card">
-                    <div class="card-number">01</div>
-                    <h3>Modernes Webdesign</h3>
-                    <p>
-                        Individuelles Design, das zum Unternehmen
-                        und zur gewünschten Zielgruppe passt.
-                    </p>
-                </div>
+          <article class="service">
+            <div class="service-number">02</div>
 
-                <div class="card">
-                    <div class="card-number">02</div>
-                    <h3>Responsive Design</h3>
-                    <p>
-                        Optimierte Darstellung auf Smartphone,
-                        Tablet und Desktop.
-                    </p>
-                </div>
+            <h3>Fade & Style</h3>
 
-                <div class="card">
-                    <div class="card-number">03</div>
-                    <h3>KI-gestützte Entwicklung</h3>
-                    <p>
-                        Moderne KI-Tools helfen dabei, Ideen,
-                        Texte und Entwicklung effizient umzusetzen.
-                    </p>
-                </div>
+            <p>
+              Moderne Fades und individuelle Styles
+              für einen frischen Look.
+            </p>
+          </article>
 
-            </div>
+
+          <article class="service">
+            <div class="service-number">03</div>
+
+            <h3>Beard</h3>
+
+            <p>
+              Konturen, Pflege und Styling für einen
+              gepflegten Bart.
+            </p>
+          </article>
 
         </div>
-    </section>
 
+      </div>
 
-    <!-- PROCESS -->
-
-    <section id="ablauf">
-        <div class="container">
-
-            <div class="section-label">Ablauf</div>
-
-            <h2 class="section-title">
-                Von der Idee<br>
-                zur fertigen Website.
-            </h2>
-
-            <p class="section-description">
-                Ein einfacher und transparenter Ablauf ohne unnötige
-                Komplexität.
-            </p>
-
-            <div class="process">
-
-                <div class="process-item">
-                    <strong>01 — Gespräch</strong>
-                    <p>
-                        Wir besprechen das Unternehmen, die Wünsche
-                        und die wichtigsten Inhalte der Website.
-                    </p>
-                </div>
-
-                <div class="process-item">
-                    <strong>02 — Design</strong>
-                    <p>
-                        Daraus entsteht ein modernes Konzept mit
-                        passendem Aufbau und Design.
-                    </p>
-                </div>
-
-                <div class="process-item">
-                    <strong>03 — Umsetzung</strong>
-                    <p>
-                        Die Website wird umgesetzt, optimiert und
-                        für verschiedene Bildschirmgrößen angepasst.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- PROJECT -->
-
-    <section id="projekte">
-        <div class="container">
-
-            <div class="section-label">Portfolio</div>
-
-            <h2 class="section-title">
-                Ausgewähltes Projekt.
-            </h2>
-
-            <p class="section-description">
-                Beispiel eines modernen Webauftritts für ein
-                deutsches Reinigungsunternehmen.
-            </p>
-
-            <div class="project">
-
-                <div class="project-image"></div>
-
-                <div class="project-info">
-
-                    <div class="project-tag">
-                        Demo Website
-                    </div>
-
-                    <h3>NordClean</h3>
-
-                    <p>
-                        Moderne Landingpage für ein
-                        Reinigungsunternehmen mit klarer Struktur,
-                        Call-to-Actions und responsive Design.
-                    </p>
-
-                    <a
-                        href="https://lyxs1k.github.io/nordclean/"
-                        target="_blank"
-                        class="button button-primary"
-                        style="width: fit-content;"
-                    >
-                        Projekt ansehen →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
     </section>
 
 
     <!-- ABOUT -->
 
-    <section id="ueber-mich">
-        <div class="container">
+    <section id="about">
 
-            <div class="about-grid">
+      <div class="container">
 
-                <div class="about-text">
+        <div class="about-grid">
 
-                    <div class="section-label">Über mich</div>
+          <div>
 
-                    <h2 class="section-title">
-                        Modernes Webdesign<br>
-                        mit Fokus auf Details.
-                    </h2>
-
-                    <p>
-                        Ich beschäftige mich mit modernem Webdesign
-                        und entwickle Websites mit HTML, CSS und
-                        modernen KI-Tools.
-                    </p>
-
-                    <p>
-                        Mein Ziel ist es, kleinen Unternehmen dabei
-                        zu helfen, online professionell und modern
-                        aufzutreten.
-                    </p>
-
-                </div>
-
-
-                <div class="about-box">
-
-                    <strong>01</strong>
-
-                    <span>
-                        Aktuelles Portfolio-Projekt
-                    </span>
-
-                    <ul class="about-list">
-                        <li>Modernes Webdesign</li>
-                        <li>Responsive Layouts</li>
-                        <li>HTML & CSS</li>
-                        <li>KI-gestützte Entwicklung</li>
-                    </ul>
-
-                </div>
-
+            <div class="section-label">
+              Über NOIR
             </div>
 
+            <h2 class="section-title">
+              Mehr als nur<br>
+              ein Haarschnitt.
+            </h2>
+
+            <p class="about-text">
+              Bei NOIR treffen klassisches Barber-Handwerk
+              und moderner Style aufeinander.
+            </p>
+
+            <p class="about-text">
+              Unser Ziel ist ein Look, der zu dir passt
+              und sich genauso gut anfühlt wie er aussieht.
+            </p>
+
+          </div>
+
+          <div class="about-box">
+            <strong>NOIR</strong>
+          </div>
+
         </div>
+
+      </div>
+
     </section>
 
 
     <!-- CONTACT -->
 
-    <section class="contact" id="kontakt">
+    <section id="contact" class="contact">
 
-        <div class="container">
+      <div class="container">
 
-            <div class="section-label">Kontakt</div>
-
-            <h2 class="section-title">
-                Du hast ein Projekt?
-            </h2>
-
-            <p class="section-description">
-                Schreib mir kurz, was du brauchst und was für
-                eine Website du dir vorstellst.
-            </p>
-
-            <div class="contact-buttons">
-
-                <a
-                    href="mailto:deine-email@example.com"
-                    class="contact-button"
-                >
-                    E-Mail schreiben →
-                </a>
-
-                <a
-                    href="https://github.com/Lyxs1k"
-                    target="_blank"
-                    class="github-button"
-                >
-                    GitHub ansehen
-                </a>
-
-            </div>
-
+        <div class="section-label">
+          Kontakt
         </div>
+
+        <h2>
+          Bereit für deinen<br>
+          neuen Look?
+        </h2>
+
+        <p>
+          Vereinbare jetzt deinen Termin und komm
+          bei NOIR BARBER vorbei.
+        </p>
+
+        <a
+          href="mailto:kontakt@noir-barber.de"
+          class="button button-primary"
+        >
+          Termin anfragen →
+        </a>
+
+      </div>
 
     </section>
 
-</main>
+  </main>
 
 
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <span>© 2026 Lyxs1k</span>
-            <span>Webdesign & digitale Lösungen</span>
-        </div>
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <div>
+        © 2026 NOIR BARBER
+      </div>
+
+      <div>
+        Demo Website — erstellt von Lyxs1k
+      </div>
+
     </div>
-</footer>
+
+  </footer>
 
 </body>
 </html>
