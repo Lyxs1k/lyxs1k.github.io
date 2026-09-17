@@ -43,7 +43,7 @@
             left: 0;
             width: 100%;
             z-index: 100;
-            background: rgba(8, 11, 16, 0.75);
+            background: rgba(8, 11, 16, 0.78);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255,255,255,0.08);
         }
@@ -100,18 +100,18 @@
         .hero::before {
             content: "";
             position: absolute;
-            width: 600px;
-            height: 600px;
+            width: 650px;
+            height: 650px;
             background: #28d7e8;
             opacity: 0.08;
-            filter: blur(120px);
+            filter: blur(130px);
             border-radius: 50%;
-            top: 10%;
-            right: -150px;
+            top: 5%;
+            right: -180px;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
             position: relative;
             z-index: 2;
         }
@@ -142,7 +142,7 @@
         .hero-text {
             color: #aeb6c2;
             font-size: 19px;
-            max-width: 650px;
+            max-width: 680px;
             margin-bottom: 35px;
         }
 
@@ -153,6 +153,7 @@
         }
 
         .button {
+            display: inline-block;
             padding: 14px 22px;
             border-radius: 11px;
             font-weight: 700;
@@ -177,7 +178,7 @@
             background: #151a22;
         }
 
-        /* SECTION */
+        /* GENERAL SECTIONS */
 
         section {
             padding: 110px 0;
@@ -201,7 +202,7 @@
 
         .section-description {
             color: #8e98a7;
-            max-width: 650px;
+            max-width: 680px;
         }
 
         /* SERVICES */
@@ -247,6 +248,33 @@
             font-size: 15px;
         }
 
+        /* PROCESS */
+
+        .process {
+            margin-top: 55px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .process-item {
+            padding: 28px;
+            border-left: 2px solid #28d7e8;
+            background: #11161e;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .process-item strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .process-item p {
+            color: #8e98a7;
+            font-size: 14px;
+        }
+
         /* PROJECT */
 
         .project {
@@ -260,7 +288,7 @@
         }
 
         .project-image {
-            min-height: 360px;
+            min-height: 390px;
             background:
                 linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.5)),
                 url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=85")
@@ -353,14 +381,33 @@
             margin: auto;
         }
 
+        .contact-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
         .contact-button {
             display: inline-block;
-            margin-top: 30px;
             background: #28d7e8;
             color: #061014;
             padding: 15px 28px;
             border-radius: 11px;
             font-weight: 800;
+        }
+
+        .github-button {
+            display: inline-block;
+            border: 1px solid #303844;
+            padding: 15px 28px;
+            border-radius: 11px;
+            font-weight: 800;
+        }
+
+        .github-button:hover {
+            background: #151a22;
         }
 
         /* FOOTER */
@@ -394,7 +441,8 @@
                 letter-spacing: -2px;
             }
 
-            .cards {
+            .cards,
+            .process {
                 grid-template-columns: 1fr;
             }
 
@@ -431,6 +479,7 @@
 
             <ul class="nav-links">
                 <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#ablauf">Ablauf</a></li>
                 <li><a href="#projekte">Projekte</a></li>
                 <li><a href="#ueber-mich">Über mich</a></li>
             </ul>
@@ -454,13 +503,14 @@
                 </div>
 
                 <h1>
-                    Moderne Websites<br>
-                    für <span>echte Unternehmen.</span>
+                    Websites, die<br>
+                    <span>professionell wirken.</span>
                 </h1>
 
                 <p class="hero-text">
                     Ich entwickle moderne, schnelle und responsive Websites
-                    für kleine Unternehmen und Selbstständige.
+                    für kleine Unternehmen und Selbstständige – klar,
+                    professionell und auf den jeweiligen Betrieb zugeschnitten.
                 </p>
 
                 <div class="buttons">
@@ -469,7 +519,7 @@
                     </a>
 
                     <a href="#kontakt" class="button button-secondary">
-                        Kontakt
+                        Projekt anfragen
                     </a>
                 </div>
 
@@ -483,29 +533,28 @@
     <section class="services" id="leistungen">
         <div class="container">
 
-            <div class="section-label">Was ich mache</div>
+            <div class="section-label">Leistungen</div>
 
             <h2 class="section-title">
-                Websites, die professionell<br>
-                aussehen und funktionieren.
+                Alles, was eine moderne<br>
+                Website braucht.
             </h2>
 
             <p class="section-description">
                 Von der ersten Idee bis zur fertigen Website.
-                Ich konzentriere mich auf ein modernes Design,
-                einfache Bedienung und eine gute Darstellung auf
+                Der Fokus liegt auf einem modernen Erscheinungsbild,
+                einfacher Bedienung und einer guten Darstellung auf
                 Smartphone, Tablet und PC.
             </p>
-
 
             <div class="cards">
 
                 <div class="card">
                     <div class="card-number">01</div>
-                    <h3>Webdesign</h3>
+                    <h3>Modernes Webdesign</h3>
                     <p>
-                        Moderne Webseiten mit einem individuellen
-                        Design passend zum Unternehmen.
+                        Individuelles Design, das zum Unternehmen
+                        und zur gewünschten Zielgruppe passt.
                     </p>
                 </div>
 
@@ -513,17 +562,66 @@
                     <div class="card-number">02</div>
                     <h3>Responsive Design</h3>
                     <p>
-                        Die Website funktioniert auf Smartphone,
+                        Optimierte Darstellung auf Smartphone,
                         Tablet und Desktop.
                     </p>
                 </div>
 
                 <div class="card">
                     <div class="card-number">03</div>
-                    <h3>KI-Unterstützung</h3>
+                    <h3>KI-gestützte Entwicklung</h3>
                     <p>
                         Moderne KI-Tools helfen dabei, Ideen,
                         Texte und Entwicklung effizient umzusetzen.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section id="ablauf">
+        <div class="container">
+
+            <div class="section-label">Ablauf</div>
+
+            <h2 class="section-title">
+                Von der Idee<br>
+                zur fertigen Website.
+            </h2>
+
+            <p class="section-description">
+                Ein einfacher und transparenter Ablauf ohne unnötige
+                Komplexität.
+            </p>
+
+            <div class="process">
+
+                <div class="process-item">
+                    <strong>01 — Gespräch</strong>
+                    <p>
+                        Wir besprechen das Unternehmen, die Wünsche
+                        und die wichtigsten Inhalte der Website.
+                    </p>
+                </div>
+
+                <div class="process-item">
+                    <strong>02 — Design</strong>
+                    <p>
+                        Daraus entsteht ein modernes Konzept mit
+                        passendem Aufbau und Design.
+                    </p>
+                </div>
+
+                <div class="process-item">
+                    <strong>03 — Umsetzung</strong>
+                    <p>
+                        Die Website wird umgesetzt, optimiert und
+                        für verschiedene Bildschirmgrößen angepasst.
                     </p>
                 </div>
 
@@ -538,17 +636,16 @@
     <section id="projekte">
         <div class="container">
 
-            <div class="section-label">Mein Projekt</div>
+            <div class="section-label">Portfolio</div>
 
             <h2 class="section-title">
-                Erstes Projekt
+                Ausgewähltes Projekt.
             </h2>
 
             <p class="section-description">
-                Eine Beispiel-Website für ein deutsches
-                Reinigungsunternehmen.
+                Beispiel eines modernen Webauftritts für ein
+                deutsches Reinigungsunternehmen.
             </p>
-
 
             <div class="project">
 
@@ -597,8 +694,8 @@
                     <div class="section-label">Über mich</div>
 
                     <h2 class="section-title">
-                        Ich baue Websites,<br>
-                        die im Gedächtnis bleiben.
+                        Modernes Webdesign<br>
+                        mit Fokus auf Details.
                     </h2>
 
                     <p>
@@ -609,7 +706,8 @@
 
                     <p>
                         Mein Ziel ist es, kleinen Unternehmen dabei
-                        zu helfen, online professioneller aufzutreten.
+                        zu helfen, online professionell und modern
+                        aufzutreten.
                     </p>
 
                 </div>
@@ -647,21 +745,32 @@
             <div class="section-label">Kontakt</div>
 
             <h2 class="section-title">
-                Du brauchst eine Website?
+                Du hast ein Projekt?
             </h2>
 
             <p class="section-description">
-                Schreib mir und erzähl mir kurz von deinem
-                Unternehmen und deinem Projekt.
+                Schreib mir kurz, was du brauchst und was für
+                eine Website du dir vorstellst.
             </p>
 
-            <a
-                href="https://github.com/Lyxs1k"
-                target="_blank"
-                class="contact-button"
-            >
-                Mein GitHub →
-            </a>
+            <div class="contact-buttons">
+
+                <a
+                    href="mailto:deine-email@example.com"
+                    class="contact-button"
+                >
+                    E-Mail schreiben →
+                </a>
+
+                <a
+                    href="https://github.com/Lyxs1k"
+                    target="_blank"
+                    class="github-button"
+                >
+                    GitHub ansehen
+                </a>
+
+            </div>
 
         </div>
 
